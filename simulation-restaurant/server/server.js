@@ -72,8 +72,8 @@ app.get('/api/me', (req,res) => {
 })
 
 
-
-
+                //74E
+app.use( express.static( `${__dirname}/../build` ) );
 
 const { SERVER_PORT } = process.env
 app.listen(SERVER_PORT, () => {
