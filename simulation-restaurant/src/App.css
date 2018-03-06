@@ -1,0 +1,39 @@
+
+
+:root{
+  --white: #f6f6f6;
+  --yellow: #e5b642;
+  --greeen: #6f934c;
+  --black: #020402;
+  --red: #af3236;
+}
+.loginBody{
+  background-image: url('./assets/katie-smith-104748.jpg');
+  min-height: 100vh;
+  min-width: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.blackOpac{
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: rgba(0, 0, 0, 0.319);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loginContainer{
+  height: 80vh;
+  width: 80vw;
+  background-color: #6f934cd6;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-radius: 7px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.logoContainer > img{
+  height: 100px;
+}
