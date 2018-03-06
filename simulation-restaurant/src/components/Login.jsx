@@ -24,7 +24,16 @@ export default class Login extends Component {
 
     }
     registerUser(){
-        
+        let user = {
+            username: this.state.username,
+            password: this.state.password
+        }
+        axios.post('/api/register-user', user).then( res => {
+            console.log(res)
+            if(res.data === 'User Registered'){
+                window.location = 'http://localhost:3000/menu'
+            }
+        })
     }
     render() {
         return (
