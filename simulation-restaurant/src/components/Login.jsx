@@ -14,8 +14,14 @@ export default class Login extends Component {
                         </div>
                         <div className="verticalLine"></div>
                         <div className="credentialsContainer">
-                            <div>Username:</div><input type="text" />
-                            <div>Password:</div><input type="text" />
+                            <div className='usernameContainer'>
+                                <div>Username:</div>
+                                <input type="text" />
+                            </div>
+                            <div className='passwordContainer'>
+                                <div>Password:</div>
+                                <input type="text" />
+                            </div>
                             <button>Login</button>
                             <button>Register</button>
                         </div>

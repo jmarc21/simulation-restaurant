@@ -34,6 +34,11 @@
   margin-left: auto;
   margin-right: auto;
 }
+.verticalLine{
+  height: 70vh;
+  width: 2px;
+  background-color: black;
+}
 .logoContainer > img{
   height: 100px;
 }
