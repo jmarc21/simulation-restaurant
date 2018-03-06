@@ -64,7 +64,12 @@ app.delete('/api/delete-food/:id', async (req,res) => {
         res.status(200).send(resp)
     })
 })
-
+app.get('/api/me', (req,res) => {
+    const db = app.get('db');
+    db.get_user_info([]).then(resp => {
+        res.status(200).send(resp)
+    })
+})
 
 
 

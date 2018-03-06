@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import Details from './Details';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import { getUserInfo } from '../ducks/reducer';
 
-export default class Menu extends Component {
+class Menu extends Component {
     constructor() {
         super();
         this.state = {
@@ -21,13 +23,15 @@ export default class Menu extends Component {
         this.inputText = this.inputText.bind(this)
         this.addItem = this.addItem.bind(this)
     }
-    componentDidMount(){
+    async componentDidMount(){
         axios.get('/api/get-food').then(res => {
             console.log(res)
             this.setState({
                 food: res.data
             })
         })
+        await this.props.getUserInfo()
+        console.log(this.props.user)
     }
     inputName(val){
         this.setState({
@@ -119,3 +123,11 @@ export default class Menu extends Component {
         )
     }
 }
+            //43H           //43G
+function mapStateToProps(state) {
+    return {
+        user: state.user
+    }
+}
+                //43C
+export default connect(mapStateToProps, { getUserInfo })(Menu);
