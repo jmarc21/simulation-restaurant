@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 massive(process.env.CONNECTION_STRING).then((db) => {
     app.set('db', db);
 })
-// 74D-3                        74M
+// 74D-3       //76C                 74M
 app.post('/api/register-user', (req, res) => {
     const { username , password } = req.body
     const db = app.get('db');
@@ -48,7 +48,16 @@ app.get('/api/get-food', (req,res) => {
         res.status(200).send(resp)
     })
 })
-
+//74D-4
+app.delete('/api/delete-food/:id', async (req,res) => {
+    console.log(req.params.id)
+    const db = app.get('db');
+                                //76D
+    await db.delete_food([req.params.id]).then(resp => {})
+    await db.get_food([]).then( resp => {
+        res.status(200).send(resp)
+    })
+})
 
 
 

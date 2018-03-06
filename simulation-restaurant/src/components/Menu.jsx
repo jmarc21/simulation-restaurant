@@ -11,6 +11,9 @@ export default class Menu extends Component {
             itemPrice: 0,
             itemText: '',
             food: [],
+            editName: '',
+            editPrice: 0,
+            editText: ''
         }
             //37C
         this.inputName = this.inputName.bind(this)
@@ -60,7 +63,23 @@ export default class Menu extends Component {
             details: true
         })
     }
-
+    editFood(e){
+        console.log(e)
+        this.setState({
+            editName: e.foodname,
+            editPrice: e.foodprice,
+            editText: e.foodtext,
+            details: true
+        })
+    }
+    deleteFood(e){
+        console.log(e.id)
+        axios.delete(`/api/delete-food/${e.id}`).then(res => {
+            this.setState({
+                food: res.data
+            })
+        })
+    }
     render() {
         let food = this.state.food.map((e,i) => {
             return(
@@ -68,8 +87,8 @@ export default class Menu extends Component {
                     <h1>{e.foodname}</h1>
                     <div>${e.foodprice}</div>
                     <div>{e.foodtext}</div>
-                    <button>Edit</button>
-                    <button>Delete</button>
+                    <button onClick={() => this.editFood(e)}>Edit</button>
+                    <button onClick={() => this.deleteFood(e)}>Delete</button>
                 </div>
             )
         })
@@ -84,6 +103,9 @@ export default class Menu extends Component {
                             inputPrice={this.inputPrice}
                             inputText={this.inputText}
                             addItem={this.addItem}
+                            name={this.state.editName}
+                            price={this.state.editPrice}
+                            text={this.state.editText}
                         />
                          :
                         <div className="menuList">
