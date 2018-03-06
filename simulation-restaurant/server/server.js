@@ -12,6 +12,12 @@ app.use(cors());
     //74HIJ  76F
 app.use(bodyParser.json());
 
+//75C
+app.use(function (req, res, next) {
+    console.log('Time:', Date.now())
+    next()
+  })
+
 massive(process.env.CONNECTION_STRING).then((db) => {
     app.set('db', db);
 })
