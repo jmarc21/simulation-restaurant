@@ -1,7 +1,31 @@
 import React, { Component } from 'react';
-import Logo from '../assets/logo.svg'
+import Logo from '../assets/logo.svg';
+import axios from 'axios';
 
 export default class Login extends Component {
+    constructor(){
+        super();
+        this.state = {
+            username: '',
+            password: '',
+        }
+    }
+    usernameInput(val){
+        this.setState({
+            username: val
+        })
+    }
+    passwordInput(val){
+        this.setState({
+            password: val
+        })
+    }
+    loginUser(){
+
+    }
+    registerUser(){
+        
+    }
     render() {
         return (
             <div className='loginBody'>
@@ -16,14 +40,17 @@ export default class Login extends Component {
                         <div className="credentialsContainer">
                             <div className='usernameContainer'>
                                 <div>Username:</div>
-                                <input type="text" />
+                                <input type="text" onChange={ event => this.usernameInput(event.target.value)}/>
                             </div>
-                            <div className='passwordContainer'>
-                                <div>Password:</div>
-                                <input type="text" />
+                            <div className='usernameContainer'>
+                                <div>Password:</div>            
+                                                                {/* 36J */}
+                                <input type="text" onChange={ event => this.passwordInput(event.target.value)} />
                             </div>
-                            <button>Login</button>
-                            <button>Register</button>
+                            <div className="loginAndRegister">
+                                <button onClick={() => this.loginUser()}>Login</button>
+                                <button onClick={() => this.registerUser()}>Register</button>
+                            </div>
                         </div>
                     </div>
                 </div>

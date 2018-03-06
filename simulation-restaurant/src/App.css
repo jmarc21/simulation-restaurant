@@ -36,9 +36,48 @@
 }
 .verticalLine{
   height: 70vh;
-  width: 2px;
+  width: 1px;
   background-color: black;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.logoContainer{
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .logoContainer > img{
-  height: 100px;
+  height: 40vh;
 }
+.usernameContainer{
+  width: 30vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 10px;
+}
+.usernameContainer > input{
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  margin-left: 10px;
+  font-size: 22px;
+}
+.usernameContainer > div{
+  font-size: 22px;
+}
+.credentialsContainer{
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.loginAndRegister > button{
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 7px;
+  margin: 10px;
+} 
