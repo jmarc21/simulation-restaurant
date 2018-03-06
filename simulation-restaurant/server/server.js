@@ -36,7 +36,6 @@ app.post('/api/register-user', (req, res) => {
 
 
 
-
 const { SERVER_PORT } = process.env
 app.listen(SERVER_PORT, () => {
     console.log(`I'm listening on port: ${SERVER_PORT}`)

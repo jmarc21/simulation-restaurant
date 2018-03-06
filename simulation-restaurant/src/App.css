@@ -81,3 +81,21 @@
   border-radius: 7px;
   margin: 10px;
 } 
+.menuBody{
+  background-image: url('./assets/edward.jpg');
+  min-height: 100vh;
+  min-width: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.menuList{
+  height: 80vh;
+  width: 80vw;
+  background-color: var(--greeen);
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

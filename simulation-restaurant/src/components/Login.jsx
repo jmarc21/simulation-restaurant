@@ -21,7 +21,16 @@ export default class Login extends Component {
         })
     }
     loginUser(){
-
+        let user = {
+            username: this.state.username,
+            password: this.state.password
+        }
+        axios.post('/api/login-user', user).then( res => {
+            console.log(res)
+            if(res.data === 'User found'){
+                window.location = 'http://localhost:3000/menu'
+            }
+        })
     }
     registerUser(){
         let user = {
